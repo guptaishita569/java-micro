@@ -1,0 +1,98 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    background-color: #000000d2;
+}
+ 
+.navbar-brand {
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 16px;
+}
+ 
+.spacer {
+    flex: 1;
+}
+ 
+button {
+    color: white;
+    text-transform: uppercase;
+    margin-left: 8px;
+    background-color: #FF5733; /* Change background color */
+    border: 2px solid #FF5733; /* Add border */
+    border-radius: 5px; /* Add border radius */
+    padding: 10px 20px; /* Add padding */
+    font-size: 14px; /* Change font size */
+    font-weight: bold; /* Make font bold */
+    cursor: pointer; /* Add pointer cursor */
+    transition: background-color 0.3s, color 0.3s; /* Add transition effect */
+}
+
+button:hover {
+    background-color: #FF8146; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
+
+ 
+button.active {
+    font-weight: 600;
+}
+ 
+.custom-toolbar {
+    background-color: #ff0000;
+}
+ 
+.full-page-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+ 
+.full-page-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+ 
+.overlay p {
+    font-size: 24px;
+    /* Adjust text styles as needed */
+}
+ 
+.overlay button.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transform: scale(1.0);
+    transition: background-color 0.3s ease;
+  }
+ 
+  .overlay button.btn:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+  }
+.overlay font{
+    font-style: italic; /* Specify your desired font family */
+    font-size: 40px; /* Specify font size */
+    font-weight: bold; /* Specify font weight */
+    color: #333333; /* Specify font color */
+    /* Add any additional font styles as needed */
+}

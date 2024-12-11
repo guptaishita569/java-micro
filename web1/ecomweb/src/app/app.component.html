@@ -1,0 +1,63 @@
+<div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn">
+    <mat-toolbar color="primary" class="navbar">
+        <span class="navbar-brand">Hunger-Hub</span>
+        <span class="spacer"></span>
+        <button mat-button routerLink="/order" routerLinkActive="active">Track Order</button>
+        <button mat-button routerLink="/signup" routerLinkActive="active">Register</button>
+        <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
+    </mat-toolbar>
+    </div>
+   
+    <div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn && !(currentRoute === '/login' || currentRoute === '/signup')"
+    [ngClass]="{'bg-image': shouldDisplayContent()}" class="scrollable-content full-page-image">
+   
+  <img src="https://img.freepik.com/free-photo/healthy-lunch-meal-with-cooked-beef-curry-generated-by-ai_188544-38833.jpg" class="bg-image" alt="Background Image">
+   
+  <div class="overlay">
+      <p class="font"> Every meal is a story waiting to be told!! </p><br>
+      <button class="btn">Explore Now</button>
+  </div>
+   
+  </div>
+  <div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn && currentRoute === '/login'"
+    [ngClass]="{'bg-image': shouldDisplayContent()}" class="scrollable-content full-page-image">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN54LwvxEMNe0Z0TvQglVwUaINtwy0Zma1HQ&s" class="bg-image" alt="Background Image">
+</div>
+<div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn && currentRoute === '/signup'"
+    [ngClass]="{'bg-image': shouldDisplayContent()}" class="scrollable-content full-page-image">
+    <!-- Content with background image -->
+    <img src="https://cdn.pixabay.com/photo/2014/10/19/20/59/hamburger-494706_640.jpg" class="bg-image" alt="Background Image">
+</div>
+
+
+  
+   
+    <div *ngIf="isAdminLoggedIn">
+        <mat-toolbar color="primary" class="navbar">
+            <span class="navbar-brand">Hunger-Hub</span>
+            <span class="spacer"></span>
+            <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</button>
+            <button mat-button routerLink="/admin/analytics" routerLinkActive="active">Analytics</button>
+            <button mat-button routerLink="/admin/category" routerLinkActive="active">Category</button>
+            <button mat-button routerLink="/admin/product" routerLinkActive="active">Product</button>
+            <button mat-button routerLink="/admin/orders" routerLinkActive="active">Orders</button>
+            <button mat-button routerLink="/admin/post-coupon" routerLinkActive="active">Post Coupon</button>
+            <button mat-button routerLink="/admin/coupons" routerLinkActive="active">Coupons</button>
+            <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+        </mat-toolbar>
+        </div>
+   
+        <div *ngIf="isCustomerLoggedIn">
+            <mat-toolbar color="primary" class="navbar">
+                <span class="navbar-brand">Hunger-Hub</span>
+                <span class="spacer"></span>
+                <button mat-button routerLink="/customer/dashboard" routerLinkActive="active">Dashboard</button>
+            <button mat-button routerLink="/customer/cart" routerLinkActive="active">Cart</button>
+            <button mat-button routerLink="/customer/my_orders" routerLinkActive="active">Orders</button>
+            <button mat-button routerLink="/customer/wishlist" routerLinkActive="active">Wishlist</button>
+            <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+            </mat-toolbar>
+            </div>
+   
+    <router-outlet />
